@@ -1,0 +1,53 @@
+@import "colors.css"; 
+@import "colors_everforest.css"; 
+
+* {
+    min-height: 10px;
+    font-family: "JetBrains Nerd Font Mono, sazanami, FontAwesome";
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.modules-right,
+.modules-center, 
+.modules-left {
+  background-color: @base;
+  padding: 0px 17px 0px 17px;
+  border-radius: 100px;
+}
+
+#waybar {
+  background: transparent;
+  color: @Statusline1;
+  border-radius: 50px;
+}
+
+#clock{
+  color: @text;
+}
+
+#mpd{
+  color: @teal;
+}
+
+#workspaces {
+  border-radius: 1rem;
+  margin: 5px;
+  color: @surface0;
+}
+
+#workspaces button {
+  margin-left: 5px;
+  color: @overlay1;
+  padding: 0px 5px;
+  transition: margin 150ms ease-in-out, padding 150ms ease-in-out;
+  border-radius: 50px;
+  transition: background-color 0.3s ease, color 0.3s ease, padding 0.2s ease;
+}
+
+#workspaces button.active {
+  background-color: @blue;
+  border-radius: 1rem;
+  padding: 0px 15px;
+  color: @base;
+}

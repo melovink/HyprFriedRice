@@ -1,0 +1,77 @@
+@import "colors_everforest.css"; 
+
+* {
+    min-height: 10px;
+    font-family: "JetBrains Nerd Font Mono, sazanami, FontAwesome";
+    font-weight: 600;
+    font-size: 14px;
+}
+
+
+.modules-center{
+  background-color: @BackgroundDim;
+  padding: 0px 17px 0px 17px;
+  border-radius: 20px;
+}
+
+#waybar {
+  background: transparent;
+  color: @Statusline1;
+  border-radius: 50px;
+  box-shadow: 10px 10px 5px black;
+}
+
+#clock{
+  color: @Purple;
+}
+
+#network{
+  color: @Blue;
+}
+
+#wireplumber{
+  color: @Yellow;
+  font-size: 16px;
+}
+
+#battery{
+  color: @Aqua;
+}
+
+#battery.charging{
+  color: @Statusline0;
+}
+
+#mpd{
+  color: @Purple;
+  background-color: #0E1316;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 15px;
+  font-size: 12px;
+}
+
+#workspaces {
+  border-radius: 1rem;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: @Foreground;
+}
+
+#workspaces button {
+  margin-left: 5px;
+  color: @Background3;
+  padding: 0px 5px;
+  transition: margin 150ms ease-in-out, padding 150ms ease-in-out;
+  border-radius: 50px;
+  transition: background-color 0.3s ease, color 0.3s ease, padding 0.2s ease;
+}
+
+#workspaces button.active {
+  background-color: @Foreground;
+  border-radius: 1rem;
+  padding: 0px 15px;
+  color: @BackgroundDim;
+}

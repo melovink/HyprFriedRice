@@ -1,0 +1,121 @@
+{
+    "layer": "top",
+    "spacing": 0,
+    "height": 25,
+    "width": 700,
+    "margin-top": 20,
+    "spacing": 15,
+    // "margin-right": 650,
+    // "margin-bottom": 0,
+    // "margin-left": 650,
+
+    "modules-center": [
+	"tray",
+	"clock",
+	"hyprland/workspaces",
+	"custom/mpd",
+	"battery",
+	"memory",
+	"wireplumber",
+	"network",
+    ],
+
+
+"custom/mpd": {
+    "format": "♪ {}",
+    "max-length": 15,
+    "interval": 10, 
+    "exec": "mpc current", 
+    "exec-if": "pgrep mpd",
+    "on-click": "mpc toggle",
+    "on-click-right": "sonata"
+},
+
+"memory": {
+    "interval": 30,
+    "format": ""
+},
+
+"cava": {
+        // "cava_config": "$XDG_CONFIG_HOME/cava/cava.conf",
+        "framerate": 100,
+        "autosens": 1,
+        "sensitivity": 1,
+        "bars": 9,
+        "lower_cutoff_freq": 50,
+        "higher_cutoff_freq": 90,
+        "hide_on_silence": true,
+        // "format_silent": "quiet",
+        "method": "pulse",
+        "source": "auto",
+        "stereo": true,
+        "reverse": false,
+        "bar_delimiter": 0,
+        "monstercat": false,
+        "waves": true,
+        "noise_reduction": 0.67,
+        "input_delay": 0,
+        "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
+        "actions": {
+                   "on-click-right": "mode"
+                   }
+    },
+
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate",
+    "format-icons": {
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "10"
+    },
+    "persistent-workspaces": {
+      "*": 3 // 3 workspaces by default on every monitor
+    },
+    "sort-by-number": true
+  },
+
+    "clock": {
+        "format": "{:%H:%M}",
+        "tooltip": false
+    },
+    "battery": {
+      "format": "   {capacity}%",
+      "format-charging": "   {capacity}%",
+      "tooltip": true
+    },
+
+    "tray": {
+      "tooltip": true,
+      "spacing": 5,
+      "icon-size": 17
+    },
+
+    "network": {
+      "interface": "wlan0",
+      "format-wifi": " ",
+      "format-ethernet": "󰈀 ",
+      "format-disconnected": "󰤮 ",
+      "tooltip-format-wifi": "   {essid}",
+      "on-click": "kitty -e nmtui",
+      "tooltip": true
+    },
+
+    "wireplumber": {
+      "format": "    {volume}%",
+      "format-muted": "  ",
+      "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+      "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+      "on-click-middle": "pavucontrol",
+      "tooltip": true,
+      "tooltip-format": "{node_name}"
+    }
+}
+3

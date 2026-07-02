@@ -1,0 +1,96 @@
+/* dark theme */
+
+@define-color bg-dark rgba(0, 3, 15, 1);
+@define-color bg rgba(3, 12, 28, 1);
+@define-color bg-light rgba(12, 28, 46, 1);
+@define-color text rgba(245, 250, 255, 1);
+@define-color text-muted rgba(157, 189, 216, 1);
+@define-color highlight rgba(71, 104, 138, 1);
+@define-color border rgba(45, 82, 110, 1);
+@define-color border-muted rgba(20, 50, 82, 1);
+@define-color primary rgba(156, 190, 240, 1);
+@define-color secondary rgba(214, 185, 120, 1);
+@define-color danger rgba(200, 120, 110, 1);
+@define-color warning rgba(168, 165, 110, 1);
+@define-color success rgba(120, 175, 150, 1);
+@define-color info rgba(140, 170, 210, 1);
+
+
+* {
+    min-height: 10px;
+    font-family: "JetBrains Nerd Font Mono";
+    font-weight: 500;
+    font-size: 12px;
+}
+
+#workspaces {
+  border: 8px solid @bg-light;
+  /* background-color: black; */
+  color: @primary;
+}
+
+#tray{
+  margin-left: 10px;
+}
+
+
+#custom-mpd,
+#backlight-slider,
+#battery,
+#wireplumber,
+#network,
+#cava,
+#clock,
+#memory {
+  /* background-color: #2e1430; */
+  padding: 0px 10px 0px 10px;
+  /*margin-left: 10px;*/
+  font-weight: 700;
+  font-size: 13px;
+  color: @primary;
+}
+
+#workspaces button.active {
+  background-color: @primary;
+  color: #2e1430;
+  padding: 0px 15px;
+  border-radius:50px;
+  border-top: 2px solid @text-muted;
+}
+
+#workspaces button.active:hover {
+  color: @primary_fixed_dim;
+  background: inherit;
+}
+
+#workspaces button {
+  margin-left: 5px;
+  background-color: @border;
+  border-top: 2px solid @highlight;
+  color: #c6bffc;
+  padding: 0px 5px;
+  transition: margin 150ms ease-in-out, padding 150ms ease-in-out;
+  border-radius: 50px;
+  transition: background-color 0.3s ease, color 0.3s ease, padding 0.2s ease;
+}
+
+#workspaces button:hover {
+  background: @surface_container_high;
+}
+
+#workspaces button.urgent {
+  background-color: @error;
+  color: @on_error;
+}
+
+window#waybar {
+    /* margin-left: 20px; */
+    background: @bg-light;
+    /*border: 3px solid @color3;*/
+    border-radius: 30px;
+  }
+
+tooltip label {
+    margin: 8px;
+}
+
