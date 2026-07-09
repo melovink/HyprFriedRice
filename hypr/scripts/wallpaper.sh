@@ -2,8 +2,8 @@
 set -euo pipefail
 
 WPDIR="$HOME/Wallpapers"
-STATE="${XDG_STATE_HOME:-$HOME/.local/state}/ricelin-wallpaper"
-BAG="${XDG_STATE_HOME:-$HOME/.local/state}/ricelin-wallpaper-bag"
+STATE="${XDG_STATE_HOME:-$HOME/.local/state}/Wallpapers"
+BAG="${XDG_STATE_HOME:-$HOME/.local/state}/Wallpapers"
 
 ensure_daemon() {
   awww query >/dev/null 2>&1 && return 0

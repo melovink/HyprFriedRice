@@ -15,7 +15,8 @@ hl.bind(mod .. " + R", hl.dsp.exec_cmd("/home/melovink/.config/hypr/scripts/open
 -----------------------
 --Window Manipulation--
 -----------------------
-hl.bind(mod .. " + X", hl.dsp.window.kill())
+hl.bind(mod .. " + X", hl.dsp.window.close())
+hl.bind(mod .. " + SHIFT + X", hl.dsp.window.kill())
 hl.bind(mod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mod .. " + S", hl.dsp.layout("togglesplit"))
@@ -44,6 +45,8 @@ end
 --Screenshots--
 ---------------
 hl.bind(mod .. " + N", hl.dsp.exec_cmd("flameshot full -c"))
+--hl.bind(mod .. " + N", hl.dsp.exec_cmd("/home/melovink/rishot/bin/rishot"))
+--hl.bind(mod .. " + N", hl.dsp.exec_cmd("grim  ~/Pictures/Screenshots/helo$(date +%s).png | wl-copy "))
 hl.bind(mod .. " + M", hl.dsp.exec_cmd("flameshot gui -c"))
 hl.bind(mod .. " + SHIFT + N", hl.dsp.exec_cmd("flameshot full -p /home/melovink/Screenshots/"))
 hl.bind(mod .. " + SHIFT + M", hl.dsp.exec_cmd("flameshot gui -p /home/melovink/Screenshots/"))
@@ -96,16 +99,17 @@ hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("mpc toggle"))
 --Micelaneos gmn cara nulisnya jir--
 ------------------------------------
 hl.bind(mod .. " + W", hl.dsp.exec_cmd("/home/melovink/.config/hypr/scripts/wallpaper.sh"))
+hl.bind(mod .. " + SHIFT + W", hl.dsp.exec_cmd("/home/melovink/.config/hypr/scripts/open-surface.sh wallpaper"))
 
 -----------
 --Battery--
 -----------
+hl.bind(mod .. "+ F2", hl.dsp.exec_cmd("/home/melovink/.config/hypr/scripts/battery.sh"))
 hl.bind(mod .. " + F1", function()
 	local battery = (hl.get_config("animations.enabled") == false)
 
 	if battery then
 		hl.exec_cmd("hyprctl reload")
-		hl.exec_cmd("killall -9 qs")
 		return
 	end
 
@@ -126,5 +130,10 @@ hl.bind(mod .. " + F1", function()
 			blur = { enabled = false },
 			rounding = 0,
 		},
+	})
+
+	hl.monitor({
+		output = "eDP-1",
+		mode = "1920x1080@60",
 	})
 end)
